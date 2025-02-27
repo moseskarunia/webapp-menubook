@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="index.css">
+  <script src="index.js" defer></script>
 </head>
 
 <body>
@@ -33,11 +34,29 @@
       </div>
       <div class="menu-price-row">
         <span class="price-description"></span>
-        <span>35</span>
+        <div class="price-and-qty">
+          <span class="price">35</span>     
+          <button onclick="substractQty(0,0)">
+            <img src="images/minus-circle.png" width="16" height="16" alt="minus-circle" class="icon-button">
+          </button>
+          <span class="qty" id="qty00">0</span>
+          <button onclick="addQty(0,0)">
+            <img src="images/plus-circle.png" width="16" height="16"  alt="plus-circle" class="icon-button">
+          </button>
+        </div>
       </div>
       <div class="menu-price-row">
         <span class="price-description">+ Grilled Salmon</span>
-        <span>55</span>
+        <div class="price-and-qty">
+          <span class="price">55</span>          
+          <button onclick="substractQty(0,1)">
+            <img src="images/minus-circle.png" width="16" height="16" alt="minus-circle" class="icon-button">
+          </button>
+          <span class="qty" id="qty01">0</span>
+          <button onclick="addQty(0,1)">
+            <img src="images/plus-circle.png" width="16" height="16"  alt="plus-circle" class="icon-button">
+          </button>
+        </div>
       </div>
     </div>
     <div class="menu-tile">
@@ -52,11 +71,29 @@
       </div>
       <div class="menu-price-row">
         <span class="price-description">1 Slice</span>
-        <span>15</span>
+        <div class="price-and-qty">
+          <span class="price">15</span>
+          <button onclick="substractQty(1,0)">
+            <img src="images/minus-circle.png" width="16" height="16" alt="minus-circle" class="icon-button">
+          </button>
+          <span class="qty" id="qty10">0</span>
+          <button onclick="addQty(1,0)">
+            <img src="images/plus-circle.png" width="16" height="16"  alt="plus-circle" class="icon-button">
+          </button>
+        </div>
       </div>
       <div class="menu-price-row">
         <span class="price-description">Pan (6 slices)</span>
-        <span>60</span>
+        <div class="price-and-qty">
+          <span class="price">60</span>
+          <button onclick="substractQty(1,1)">
+            <img src="images/minus-circle.png" width="16" height="16" alt="minus-circle" class="icon-button">
+          </button>
+          <span class="qty" id="qty11">0</span>
+          <button onclick="addQty(1,1)">
+            <img src="images/plus-circle.png" width="16" height="16"  alt="plus-circle" class="icon-button">
+          </button>
+        </div>
       </div>
     </div>
     <div class="menu-tile">
@@ -71,11 +108,29 @@
       </div>
       <div class="menu-price-row">
         <span class="price-description">Glass</span>
-        <span>100</span>
+        <div class="price-and-qty">
+          <span class="price">100</span>
+          <button onclick="substractQty(2,0)">
+            <img src="images/minus-circle.png" width="16" height="16" alt="minus-circle" class="icon-button">
+          </button>
+          <span class="qty" id="qty20">0</span>
+          <button onclick="addQty(2,0)">
+            <img src="images/plus-circle.png" width="16" height="16"  alt="plus-circle" class="icon-button">
+          </button>
+        </div>
       </div>
       <div class="menu-price-row">
         <span class="price-description">Bottle</span>
-        <span>1500</span>
+        <div class="price-and-qty">
+          <span class="price">1500</span>
+          <button onclick="substractQty(2,1)">
+            <img src="images/minus-circle.png" width="16" height="16" alt="minus-circle" class="icon-button">
+          </button>
+          <span class="qty" id="qty21">0</span>
+          <button onclick="addQty(2,1)">
+            <img src="images/plus-circle.png" width="16" height="16"  alt="plus-circle" class="icon-button">
+          </button>
+        </div>
       </div>
     </div>
     <div class="menu-tile">
@@ -90,11 +145,29 @@
       </div>
       <div class="menu-price-row">
         <span class="price-description">Americano</span>
-        <span>25</span>
+        <div class="price-and-qty">
+          <span class="price">25</span>
+          <button onclick="substractQty(3,0)">
+            <img src="images/minus-circle.png" width="16" height="16" alt="minus-circle" class="icon-button">
+          </button>
+          <span class="qty" id="qty30">0</span>
+          <button onclick="addQty(3,0)">
+            <img src="images/plus-circle.png" width="16" height="16"  alt="plus-circle" class="icon-button">
+          </button>
+        </div>
       </div>
       <div class="menu-price-row">
         <span class="price-description">Latte</span>
-        <span>30</span>
+        <div class="price-and-qty">
+          <span class="price">30</span>
+          <button onclick="substractQty(3,1)">
+            <img src="images/minus-circle.png" width="16" height="16" alt="minus-circle" class="icon-button">
+          </button>
+          <span class="qty" id="qty31">0</span>
+          <button onclick="addQty(3,1)">
+            <img src="images/plus-circle.png" width="16" height="16"  alt="plus-circle" class="icon-button">
+          </button>
+        </div>
       </div>
     </div>
   </div>
