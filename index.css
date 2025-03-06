@@ -28,6 +28,12 @@ button:hover img {
   height: 18px;
 }
 
+button:active img {
+  transition: all 0.2s ease-in-out;
+  width: 14px;
+  height: 14px;
+}
+
 body {
   background-color: white;
 }
