@@ -9,10 +9,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="index.css">
-  <script src="index.js" defer></script>
 </head>
 
-<body>
+<body id="outer">
   <div class="appbar">Kongkow Cafe</div>
   <div class="hero"><img src="./images/cover.jpg"
       alt="hero"></div>
@@ -21,157 +20,9 @@
     <div class="document-title">Kongkow Cafe Menu 2023</div>
     <div class="price-note">All prices are in thousand rupiah</div>
   </div>
-  <div class="menu-area">
-    <div class="menu-tile">
-      <div class="menu-photo">
-        <img
-          src="images/salad.jpg"
-          alt="salad">
-      </div>
-      <div class="menu-tile-name">Avocado Pesto Salad</div>
-      <div class="menu-tile-description">
-        “Home-grown vegetables with loads of avocado, topped with mouthwatering pesto salad”
-      </div>
-      <div class="menu-price-row">
-        <span class="price-description"></span>
-        <div class="price-and-qty">
-          <span class="price">35</span>     
-          <button onclick="substractQty(0,0)">
-            <img src="images/minus-circle.png" width="16" height="16" alt="minus-circle" class="icon-button">
-          </button>
-          <span class="qty" id="qty00">0</span>
-          <button onclick="addQty(0,0)">
-            <img src="images/plus-circle.png" width="16" height="16"  alt="plus-circle" class="icon-button">
-          </button>
-        </div>
-      </div>
-      <div class="menu-price-row">
-        <span class="price-description">+ Grilled Salmon</span>
-        <div class="price-and-qty">
-          <span class="price">55</span>          
-          <button onclick="substractQty(0,1)">
-            <img src="images/minus-circle.png" width="16" height="16" alt="minus-circle" class="icon-button">
-          </button>
-          <span class="qty" id="qty01">0</span>
-          <button onclick="addQty(0,1)">
-            <img src="images/plus-circle.png" width="16" height="16"  alt="plus-circle" class="icon-button">
-          </button>
-        </div>
-      </div>
-    </div>
-    <div class="menu-tile">
-      <div class="menu-photo">
-        <img
-          src="images/pizza.jpg"
-          alt="pizza">
-      </div>
-      <div class="menu-tile-name">Triple Cheese Pizza</div>
-      <div class="menu-tile-description">
-        “Indulge yourself in this simple yet delicious delicacy”
-      </div>
-      <div class="menu-price-row">
-        <span class="price-description">1 Slice</span>
-        <div class="price-and-qty">
-          <span class="price">15</span>
-          <button onclick="substractQty(1,0)">
-            <img src="images/minus-circle.png" width="16" height="16" alt="minus-circle" class="icon-button">
-          </button>
-          <span class="qty" id="qty10">0</span>
-          <button onclick="addQty(1,0)">
-            <img src="images/plus-circle.png" width="16" height="16"  alt="plus-circle" class="icon-button">
-          </button>
-        </div>
-      </div>
-      <div class="menu-price-row">
-        <span class="price-description">Pan (6 slices)</span>
-        <div class="price-and-qty">
-          <span class="price">60</span>
-          <button onclick="substractQty(1,1)">
-            <img src="images/minus-circle.png" width="16" height="16" alt="minus-circle" class="icon-button">
-          </button>
-          <span class="qty" id="qty11">0</span>
-          <button onclick="addQty(1,1)">
-            <img src="images/plus-circle.png" width="16" height="16"  alt="plus-circle" class="icon-button">
-          </button>
-        </div>
-      </div>
-    </div>
-    <div class="menu-tile">
-      <div class="menu-photo">
-        <img
-          src="images/wine.jpg"
-          alt="wine">
-      </div>
-      <div class="menu-tile-name">Seasonal Wine</div>
-      <div class="menu-tile-description">
-        “A great meal becomes perfect when combined with a good wine”
-      </div>
-      <div class="menu-price-row">
-        <span class="price-description">Glass</span>
-        <div class="price-and-qty">
-          <span class="price">100</span>
-          <button onclick="substractQty(2,0)">
-            <img src="images/minus-circle.png" width="16" height="16" alt="minus-circle" class="icon-button">
-          </button>
-          <span class="qty" id="qty20">0</span>
-          <button onclick="addQty(2,0)">
-            <img src="images/plus-circle.png" width="16" height="16"  alt="plus-circle" class="icon-button">
-          </button>
-        </div>
-      </div>
-      <div class="menu-price-row">
-        <span class="price-description">Bottle</span>
-        <div class="price-and-qty">
-          <span class="price">1500</span>
-          <button onclick="substractQty(2,1)">
-            <img src="images/minus-circle.png" width="16" height="16" alt="minus-circle" class="icon-button">
-          </button>
-          <span class="qty" id="qty21">0</span>
-          <button onclick="addQty(2,1)">
-            <img src="images/plus-circle.png" width="16" height="16"  alt="plus-circle" class="icon-button">
-          </button>
-        </div>
-      </div>
-    </div>
-    <div class="menu-tile">
-      <div class="menu-photo">
-        <img
-          src="images/coffee.jpg"
-          alt="coffee">
-      </div>
-      <div class="menu-tile-name">Coffee</div>
-      <div class="menu-tile-description">
-        “The best coffee you can have from the land of Indonesia”
-      </div>
-      <div class="menu-price-row">
-        <span class="price-description">Americano</span>
-        <div class="price-and-qty">
-          <span class="price">25</span>
-          <button onclick="substractQty(3,0)">
-            <img src="images/minus-circle.png" width="16" height="16" alt="minus-circle" class="icon-button">
-          </button>
-          <span class="qty" id="qty30">0</span>
-          <button onclick="addQty(3,0)">
-            <img src="images/plus-circle.png" width="16" height="16"  alt="plus-circle" class="icon-button">
-          </button>
-        </div>
-      </div>
-      <div class="menu-price-row">
-        <span class="price-description">Latte</span>
-        <div class="price-and-qty">
-          <span class="price">30</span>
-          <button onclick="substractQty(3,1)">
-            <img src="images/minus-circle.png" width="16" height="16" alt="minus-circle" class="icon-button">
-          </button>
-          <span class="qty" id="qty31">0</span>
-          <button onclick="addQty(3,1)">
-            <img src="images/plus-circle.png" width="16" height="16"  alt="plus-circle" class="icon-button">
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-
+  <div class="menu-area" id="menu-area"></div>
 </body>
+
+<script src="index.js"></script>
 
 </html>
