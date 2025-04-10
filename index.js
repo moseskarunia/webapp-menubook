@@ -1,3 +1,5 @@
+let totalPrice = 0;
+
 const menus = [
   {
     title: 'Avocado Pesto Salad',
@@ -109,6 +111,12 @@ document.getElementById('menu-area').innerHTML = menuArea;
 
 function addQty(menuIndex, priceIndex) {
   cart[menuIndex][priceIndex] = cart[menuIndex][priceIndex] + 1;
+
+  totalPrice += menus[menuIndex].prices[priceIndex].price;
+
+  document.getElementById('checkout').innerHTML =
+    'Rp ' + (totalPrice * 1000).toLocaleString();
+
   document.getElementById('qty' + menuIndex + priceIndex).innerHTML =
     cart[menuIndex][priceIndex];
 }
@@ -116,7 +124,17 @@ function addQty(menuIndex, priceIndex) {
 function substractQty(menuIndex, priceIndex) {
   if (cart[menuIndex][priceIndex] > 0) {
     cart[menuIndex][priceIndex] = cart[menuIndex][priceIndex] - 1;
+
+    totalPrice -= menus[menuIndex].prices[priceIndex].price;
+
+    document.getElementById('checkout').innerHTML =
+      'Rp ' + (totalPrice * 1000).toLocaleString();
+
     document.getElementById('qty' + menuIndex + priceIndex).innerHTML =
       cart[menuIndex][priceIndex];
   }
+}
+
+function showSummary() {
+  alert('Your total order is: Rp ' + (totalPrice * 1000).toLocaleString());
 }
