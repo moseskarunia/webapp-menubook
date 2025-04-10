@@ -18,8 +18,8 @@ button {
   border-radius: 100%;
 }
 
-button:hover{
-  background-color: rgba(0,0,0,0.1);
+button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 button:hover img {
@@ -39,11 +39,15 @@ body {
 }
 
 div.appbar {
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  background-color: #f44336;
+}
+
+div.appbar > span {
   padding: 16px;
-  background-color: #F44336;
   color: white;
   font-size: 16px;
   font-weight: 500;
@@ -144,4 +148,18 @@ span.price-description {
   div.menu-area {
     grid-template-columns: repeat(4, 1fr);
   }
+}
+
+.appbar > button#checkout {
+  all: unset;
+  cursor: pointer;
+  height: 100%;
+  padding: 0 16px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+  background-color: #4caf50;
 }
