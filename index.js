@@ -64,50 +64,9 @@ const menus = [
   },
 ];
 
-const cart = [];
+let cart = [];
 
-for (let i = 0; i < menus.length; i++) {
-  cart.push([0, 0]);
-}
-
-let menuArea = '';
-
-for (let i = 0; i < menus.length; i++) {
-  const e = menus[i];
-  let menuPrices = '';
-
-  for (let j = 0; j < e.prices.length; j++) {
-    const f = e.prices[j];
-    menuPrices += `
-          <div class="menu-price-row">
-              <span class="price-description">${f.label}</span>
-              <div class="price-and-qty">
-                  <span class="price">${f.price}</span>
-                  <button onclick='substractQty(${i},${j})'>
-                      <img src="assets/circle-minus.png" width="16" height="16" alt="minus-circle" />
-                  </button>
-                  <span class="qty" id="qty${i}${j}">0</span>
-                  <button onclick='addQty(${i},${j})'>
-                      <img src="assets/circle-plus.png" width="16" height="16" alt="plus-circle" />
-                  </button>
-              </div>
-          </div>
-      `;
-  }
-
-  menuArea += `
-      <div class="menu-tile">
-          <div class="menu-photo">
-              <img src="${e.photoUrl}" alt="${e.title}">
-          </div>
-          <div class="menu-tile-name">${e.title}</div>
-          <div class="menu-tile-description">${e.description}</div>
-          ${menuPrices}
-      </div>
-  `;
-}
-
-document.getElementById('menu-area').innerHTML = menuArea;
+resetCart();
 
 function addQty(menuIndex, priceIndex) {
   cart[menuIndex][priceIndex] = cart[menuIndex][priceIndex] + 1;
@@ -136,5 +95,59 @@ function substractQty(menuIndex, priceIndex) {
 }
 
 function showSummary() {
-  alert('Your total order is: Rp ' + (totalPrice * 1000).toLocaleString());
+  alert(
+    'Thanks for your order. Your total order is: Rp ' +
+      (totalPrice * 1000).toLocaleString()
+  );
+  cart = [];
+  totalPrice = 0;
+
+  document.getElementById('checkout').innerHTML =
+    'Rp ' + (totalPrice * 1000).toLocaleString();
+
+  resetCart();
+}
+
+function resetCart() {
+  for (let i = 0; i < menus.length; i++) {
+    cart.push([0, 0]);
+  }
+
+  let menuArea = '';
+
+  for (let i = 0; i < menus.length; i++) {
+    const e = menus[i];
+    let menuPrices = '';
+
+    for (let j = 0; j < e.prices.length; j++) {
+      const f = e.prices[j];
+      menuPrices += `
+            <div class="menu-price-row">
+                <span class="price-description">${f.label}</span>
+                <div class="price-and-qty">
+                    <span class="price">${f.price}</span>
+                    <button onclick='substractQty(${i},${j})'>
+                        <img src="assets/circle-minus.png" width="16" height="16" alt="minus-circle" />
+                    </button>
+                    <span class="qty" id="qty${i}${j}">0</span>
+                    <button onclick='addQty(${i},${j})'>
+                        <img src="assets/circle-plus.png" width="16" height="16" alt="plus-circle" />
+                    </button>
+                </div>
+            </div>
+        `;
+    }
+
+    menuArea += `
+        <div class="menu-tile">
+            <div class="menu-photo">
+                <img src="${e.photoUrl}" alt="${e.title}">
+            </div>
+            <div class="menu-tile-name">${e.title}</div>
+            <div class="menu-tile-description">${e.description}</div>
+            ${menuPrices}
+        </div>
+    `;
+  }
+  document.getElementById('menu-area').innerHTML = menuArea;
 }
