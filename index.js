@@ -1,69 +1,4 @@
 let totalPrice = 0;
-
-const menus = [
-  {
-    title: 'Avocado Pesto Salad',
-    description:
-      'Home-grown vegetables with load of avocado, topped with mouthwatering pesto salad',
-    photoUrl: 'assets/salad.jpg',
-    prices: [
-      {
-        label: '',
-        price: 35,
-      },
-      {
-        label: '+Grilled Salmon',
-        price: 55,
-      },
-    ],
-  },
-  {
-    title: 'Triple Cheese Pizza',
-    description: 'Indulge yourself in this simple yet delicious delicacy',
-    photoUrl: 'assets/pizza.jpg',
-    prices: [
-      {
-        label: '1 Slice',
-        price: 15,
-      },
-      {
-        label: 'Pan (6 slices)',
-        price: 60,
-      },
-    ],
-  },
-  {
-    title: 'Seasonal Wine',
-    description: 'A great meal becomes perfect when combined with a good wine',
-    photoUrl: 'assets/wine.jpg',
-    prices: [
-      {
-        label: 'Glass',
-        price: 100,
-      },
-      {
-        label: 'Bottle',
-        price: 1500,
-      },
-    ],
-  },
-  {
-    title: 'Coffee',
-    description: 'The best coffee you can have from the land of Indonesia',
-    photoUrl: 'assets/coffee.jpg',
-    prices: [
-      {
-        label: 'Americano',
-        price: 25,
-      },
-      {
-        label: 'Latte',
-        price: 30,
-      },
-    ],
-  },
-];
-
 let cart = [];
 
 resetCart();
@@ -95,10 +30,9 @@ function substractQty(menuIndex, priceIndex) {
 }
 
 function showSummary() {
-  alert(
-    'Thanks for your order. Your total order is: Rp ' +
-      (totalPrice * 1000).toLocaleString()
-  );
+  window.location.href = `order-confirmation/index.html?cart=${JSON.stringify(
+    cart
+  )}&totalPrice=${totalPrice}`;
   cart = [];
   totalPrice = 0;
 
@@ -112,7 +46,7 @@ function resetCart() {
   for (let i = 0; i < menus.length; i++) {
     cart.push([0, 0]);
   }
-
+  
   let menuArea = '';
 
   for (let i = 0; i < menus.length; i++) {
