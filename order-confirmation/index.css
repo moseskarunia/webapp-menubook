@@ -30,7 +30,7 @@ div.place-street {
 
 div.divider {
   font-size: 24px;
-  padding: 16px;
+  padding: 16px 0;
 }
 
 div.table {
@@ -56,9 +56,26 @@ div.ordered-menus {
   gap: 4px;
 }
 
-div.price-row {
+div.row {
   width: 100%;
   flex-direction: row;
   display: flex;
   justify-content: space-between;
+}
+
+div.summary {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 32px;
+}
+
+div.grand-total {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 24px;
+  padding-left: 16px;
+  margin-bottom: 32px;
 }
