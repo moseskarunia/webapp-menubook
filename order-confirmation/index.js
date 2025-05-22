@@ -50,3 +50,7 @@ document.getElementById('grand-total-price').innerHTML = (
   (totalPrice + serviceCharge + pb1) *
   1000
 ).toLocaleString();
+
+document.getElementById('order-time').innerHTML = new Date().toLocaleString(
+  'id-ID'
+);

@@ -79,3 +79,7 @@ div.grand-total {
   padding-left: 16px;
   margin-bottom: 32px;
 }
+
+div.thank-you {
+  padding: 16px 0;
+}
