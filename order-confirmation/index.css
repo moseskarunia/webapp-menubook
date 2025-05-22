@@ -1,0 +1,14 @@
+/** CSS Reset */
+*,
+html,
+body {
+  font-family: 'Barlow';
+  margin: 0;
+  padding: 0;
+  color: #424242;
+}
+
+div.bill {
+  width: 580px;
+  background-color: #f5f5f5;
+}
